@@ -1,18 +1,15 @@
 # Codyssey
 
+### 추가내용
+검증 방법(어떤 명령으로 무엇을 확인했는지) + 결과 위치 링크
+트러블슈팅 2건 이상(문제 → 원인 가설 → 확인 → 해결/대안)
+기술 문서만 읽어도 전체 수행 내용을 파악할 수 있어야 한다.
+
+
 ## 프로젝트 개요
 Windows WSL2 환경에서 Docker를 활용한 개발환경 구축 실습
 
 ---
-
-## 실행 환경
-| 항목 | 내용 |
-|------|------|
-| OS | Windows + WSL2 (Ubuntu) |
-| 컨테이너 | Docker |
-| 웹서버 | Nginx |
-| 포트 | 8080:80 |
-
 ## 실행 환경
 | 항목 | 내용 |
 |------|------|
@@ -20,17 +17,125 @@ Windows WSL2 환경에서 Docker를 활용한 개발환경 구축 실습
 | 배포판 | Ubuntu 22.04 LTS |
 | 쉘 | bash |
 | 터미널 | Windows Terminal |
-| Docker 버전 | 확인 후 작성 |
-![Docker 버전 확인](https://github.com/user-attachments/assets/9cd24b5e-aaac-4bb2-8765-a92120eb5d5b)
+| 컨테이너 | Docker |
+| Docker 버전 | Docker version 29.9.2 |
 | Git 버전 | 확인 후 작성 |
-<img width="607" height="219" alt="image" src="https://github.com/user-attachments/assets/478dcc9e-99ce-49d8-8b0f-cd626e919e3f" />
+<img width="553" height="32" alt="image" src="https://github.com/user-attachments/assets/5f0d6dfd-eee8-4d30-a136-53902b09d083" />
 
 
+---
+##
+## 수행 항목 체크리스트
+
+### ✅ 터미널 기본 조작
+- [x] pwd - 현재 경로 확인
+- [x] ls - 파일 목록 확인
+- [x] mkdir - 디렉토리 생성
+- [x] cd - 디렉토리 이동
+
+### ✅ 파일 권한
+- [x] chmod 644 - 파일 읽기/쓰기 권한 설정
+- [x] chmod 755 - 실행 권한 설정
+- [x] ls -l - 권한 확인
+
+### ✅ Docker 설치 및 검증
+- [x] Docker 엔진 설치
+- [x] docker --version 확인
+- [x] docker run hello-world 실행
+
+### ✅ Dockerfile 작성 및 빌드
+- [x] Dockerfile 작성
+- [x] docker build 이미지 빌드
+- [x] docker images 이미지 확인
+
+### ✅ 포트 매핑 및 컨테이너 실행
+- [x] docker run -p 8080:80 실행
+- [x] localhost:8080 브라우저 접속 확인
+- [x] docker ps 컨테이너 상태 확인
+
+### ✅ 볼륨 / 바인드 마운트
+- [x] 바인드 마운트 (-v) 실습
+- [x] 파일 수정 실시간 반영 확인
+- [x] 볼륨 마운트 실습
+- [x] 컨테이너 재시작 후 데이터 유지 확인
+
+### ✅ Git
+- [x] git init
+- [x] git add
+- [x] git commit
+- [x] git push
+
+### ✅ GitHub
+- [x] Repository 생성
+- [x] README.md 작성
+- [x] 원격 저장소 연결 및 push 완료
 ---
 
 ## 실습 목록
 
-### 1. WSL2 + Ubuntu 설치
+## STEP 1. 터미널 & Docker 설치
+ 
+✅ 1단계 - WSL2 설치 : PowerShell(관리자 권한)에서 WSL2 설치 명령 실행 후 컴퓨터 재부팅
+✅ 2단계 - Ubuntu 설치
+✅ 3단계 - 환경 설정
+✅ 4단계 - 패키지 업데이트 : sudo apt update 실행 -> 32.4MB 다운로드 완료 -> 133개 업그레이드 가능 패키지 확인
+
+ 1. WSL2 및 Ubuntu 설치 : 리눅스 CLI (터미널)  
+   - PowerShell을 이용하여 WSL 및 Ubuntu 설치한다.
+<img width="1255" height="621" alt="image" src="https://github.com/user-attachments/assets/8c2ff85e-46c6-4250-a18c-f1990f332fd1" />
+<img width="1099" height="246" alt="image" src="https://github.com/user-attachments/assets/cfec0886-36f6-4f06-80de-da8394d145f8" />
+<img width="1546" height="904" alt="image" src="https://github.com/user-attachments/assets/10e64058-da2c-4527-84b3-f021cd528e63" />
+
+
+ 2. Docker 설치
+    - Docker를 쓰는 이유 : 나중에 배울 데이터베이스, 서버 등을 복잡한 설치없이 바로 실행할 수 있음
+ (1) 필수 패키지 설치  
+<img width="855" height="229" alt="image" src="https://github.com/user-attachments/assets/265f0b27-b083-401e-8b7f-ca5c6fc5d584" />
+
+(2) Docker 공식 GPG 키 추가
+<img width="1568" height="188" alt="image" src="https://github.com/user-attachments/assets/95a3618a-d4be-441b-902c-ac673ef8b70d" />
+
+ (3) Docker 저장소 추가
+ <img width="857" height="59" alt="image" src="https://github.com/user-attachments/assets/2a24531d-5153-4bdf-9c57-d74cb4257fdd" />
+
+ (4) Docker 엔진 설치
+ <img width="848" height="239" alt="image" src="https://github.com/user-attachments/assets/18304909-e576-41ca-a51c-bf6aff944e9f" />
+
+ (5) 설치완료
+ <img width="358" height="31" alt="image" src="https://github.com/user-attachments/assets/f0fc18c8-4815-4f90-afe8-82282b2e8216" />
+
+ 
+     
+      
+👉 용어정리
+  1️⃣ CLI (Command Line Interface) : 텍스트 명령어로 컴퓨터를 조작하는 방식
+  2️⃣ PowerSell : 윈도우 명령어 창(CLI)
+  3️⃣ WSL(Windows Subsystem for Linux) : Windows 안에서 Linux를 쓸 수 있게 해주는 도구
+  4️⃣ Ubuntu : 리눅스 운영체제 종류
+  <img width="243" height="128" alt="image" src="https://github.com/user-attachments/assets/45df2790-993b-4d80-b74b-b376c2161186" />
+
+  (5) Docker : 프로그램을 어디서든 똑같이 실행할 수 있게 해주는 도구 
+
+## STEP 2. 작업 디렉토리 & 권한 정리
+
+
+## STEP 3. Dockerfile로 웹서버 만들기
+
+## STEP 4. 포트 매핑으로 접속 확인
+* 브라우저 직접 접속
+
+
+## STEP 5. 바인드 마운트 / 볼륨
+* 코드 변경 즉시 반영
+* 데이터 영속성 확인
+
+## STEP 6. Git / GitHub 연동
+* 버전 관리 & 팀 협업
+
+
+
+-------
+### 1. 터미널(WSL2) + Ubuntu 설치
 - Windows에 WSL2 설치
 - Ubuntu 배포판 설치 및 초기 설정
 
