@@ -23,6 +23,8 @@ Windows WSL2 환경에서 Docker를 활용한 개발환경 구축 실습
 | Docker 버전 | 확인 후 작성 |
 ![Docker 버전 확인](https://github.com/user-attachments/assets/9cd24b5e-aaac-4bb2-8765-a92120eb5d5b)
 | Git 버전 | 확인 후 작성 |
+<img width="607" height="219" alt="image" src="https://github.com/user-attachments/assets/478dcc9e-99ce-49d8-8b0f-cd626e919e3f" />
+
 
 ---
 
