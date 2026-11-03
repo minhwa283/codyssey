@@ -104,9 +104,10 @@ Windows WSL2 환경에서 Docker를 활용한 개발환경 구축 실습
  (5) 설치완료
  <img width="358" height="31" alt="image" src="https://github.com/user-attachments/assets/f0fc18c8-4815-4f90-afe8-82282b2e8216" />
 
- 
-     
-      
+### Docker 운영 검증 로그
+<img width="587" height="176" alt="image" src="https://github.com/user-attachments/assets/4c8590c7-8a32-47fd-88ea-b8149b1250ec" />
+<img width="851" height="90" alt="image" src="https://github.com/user-attachments/assets/72439e50-e272-4c3f-b1b8-b5f465fea57b" />      
+
 👉 용어정리
   1️⃣ CLI (Command Line Interface) : 텍스트 명령어로 컴퓨터를 조작하는 방식
   2️⃣ PowerSell : 윈도우 명령어 창(CLI)
@@ -117,17 +118,37 @@ Windows WSL2 환경에서 Docker를 활용한 개발환경 구축 실습
   (5) Docker : 프로그램을 어디서든 똑같이 실행할 수 있게 해주는 도구 
 
 ## STEP 2. 작업 디렉토리 & 권한 정리
+<img width="1323" height="336" alt="image" src="https://github.com/user-attachments/assets/2de90437-afe5-4432-acbd-53411ff76edf" />
+<img width="880" height="189" alt="image" src="https://github.com/user-attachments/assets/1e39f7cc-c182-4fc0-a5b7-c73f40c09158" />
+
 
 
 ## STEP 3. Dockerfile로 웹서버 만들기
+<img width="1198" height="121" alt="image" src="https://github.com/user-attachments/assets/60aadf35-6fb9-47db-9795-8d4e31237960" />
+<img width="1224" height="334" alt="image" src="https://github.com/user-attachments/assets/8844c599-40bf-4f97-9310-fa224c12139e" />
+<img width="899" height="154" alt="image" src="https://github.com/user-attachments/assets/0d2a7d8d-b1b2-4d34-bc1c-5cffab1115fa" />
+<img width="1568" height="669" alt="image" src="https://github.com/user-attachments/assets/4ca7a86c-4c9c-4e15-8ac1-dd2f303c3ced" />
+
+
+
 
 ## STEP 4. 포트 매핑으로 접속 확인
 * 브라우저 직접 접속
-
+<img width="1568" height="139" alt="image" src="https://github.com/user-attachments/assets/b3ca8ea2-a2c4-4655-a17a-175d2e930654" />
+<img width="1470" height="88" alt="image" src="https://github.com/user-attachments/assets/49b2c6a8-a99d-415d-9178-405a11a3a0db" />
 
 ## STEP 5. 바인드 마운트 / 볼륨
 * 코드 변경 즉시 반영
 * 데이터 영속성 확인
+
+<img width="1568" height="655" alt="image" src="https://github.com/user-attachments/assets/b6617c48-d57a-4095-bcaf-79d4d488ee29" />
+<img width="1568" height="1161" alt="image" src="https://github.com/user-attachments/assets/8de1591e-717e-4cc4-8462-68015baa6a23" />
+<img width="1568" height="1052" alt="image" src="https://github.com/user-attachments/assets/b7afe40f-3965-4684-b116-6efa4c8c2b7c" />
+<img width="1568" height="619" alt="image" src="https://github.com/user-attachments/assets/3cdcfd9d-0e28-4974-85c1-b3b0396b3a1c" />
+
+
+
+
 
 ## STEP 6. Git / GitHub 연동
 * 버전 관리 & 팀 협업
