@@ -1,16 +1,41 @@
-# Codyssey
-
+마크다운 문법
+개행은 줄 끝에 두 칸 띄우기  
+개행  
+_기울림꼴_ , **굵게**
+>인용구  
+>개별적으로 붙여야됨
+---
 ### 추가내용
 검증 방법(어떤 명령으로 무엇을 확인했는지) + 결과 위치 링크
 트러블슈팅 2건 이상(문제 → 원인 가설 → 확인 → 해결/대안)
 기술 문서만 읽어도 전체 수행 내용을 파악할 수 있어야 한다.
 
+---  
+_[올인원 - 입학연수 E1-1]_
+<img width="846" height="260" alt="image" src="https://github.com/user-attachments/assets/7da59523-9c41-43b1-9eef-f0a92ad35dc8" />
 
-## 프로젝트 개요
-Windows WSL2 환경에서 Docker를 활용한 개발환경 구축 실습
+# 📌 프로젝트 개요
 
----
-## 실행 환경
+개발은 **환경을 세팅하는 순간부터 시작**됩니다.  
+개발자의 첫 번째 기반인 **개발 워크스테이션을 직접 구축**하는 실습으로 코드가 "내 컴퓨터에서만" 돌아가는 문제를 줄이고, 팀원 누구나 같은 방식으로 실행, 배포, 디버깅할 수 있는 환경 구성을 목표로 합니다.
+
+    📚 학습도구
+    리눅스 CLI(터미널), Docker(컨테이너), Git/GitHub(버전 관리 및 협업)
+    
+<br>  
+
+# 📌 학습 목표
+
+- ✅ 터미널(CLI)로 작업 디렉토리와 파일 권한 관리
+- ✅ Docker를 이용한 재현 가능한 실행 환경 구축
+- ✅ Git/GitHub를 통한 버전 관리 및 협업 기반 마련
+- ✅ "내 컴퓨터에서만 돌아가는 문제" 해결  
+
+<br><br><br>     
+
+
+
+## 🖥️ 실행 환경
 | 항목 | 내용 |
 |------|------|
 | OS | Windows 11 + WSL2 |
@@ -22,65 +47,68 @@ Windows WSL2 환경에서 Docker를 활용한 개발환경 구축 실습
 | Git 버전 | 확인 후 작성 |
 <img width="553" height="32" alt="image" src="https://github.com/user-attachments/assets/5f0d6dfd-eee8-4d30-a136-53902b09d083" />
 
+<br><br>    
 
----
-##
-## 수행 항목 체크리스트
+## 🖥️ 수행 항목 체크리스트
 
-### ✅ 터미널 기본 조작
+✅ 터미널 기본 조작
 - [x] pwd - 현재 경로 확인
 - [x] ls - 파일 목록 확인
 - [x] mkdir - 디렉토리 생성
 - [x] cd - 디렉토리 이동
 
-### ✅ 파일 권한
+✅ 파일 권한
 - [x] chmod 644 - 파일 읽기/쓰기 권한 설정
 - [x] chmod 755 - 실행 권한 설정
 - [x] ls -l - 권한 확인
 
-### ✅ Docker 설치 및 검증
+✅ Docker 설치 및 검증
 - [x] Docker 엔진 설치
 - [x] docker --version 확인
-- [x] docker run hello-world 실행
-
-### ✅ Dockerfile 작성 및 빌드
+- [x] docker run hello-world 실행  
+      
+ ✅ Dockerfile 작성 및 빌드
 - [x] Dockerfile 작성
 - [x] docker build 이미지 빌드
 - [x] docker images 이미지 확인
 
-### ✅ 포트 매핑 및 컨테이너 실행
+✅ 포트 매핑 및 컨테이너 실행
 - [x] docker run -p 8080:80 실행
 - [x] localhost:8080 브라우저 접속 확인
 - [x] docker ps 컨테이너 상태 확인
 
-### ✅ 볼륨 / 바인드 마운트
+✅ 볼륨 / 바인드 마운트
 - [x] 바인드 마운트 (-v) 실습
 - [x] 파일 수정 실시간 반영 확인
 - [x] 볼륨 마운트 실습
 - [x] 컨테이너 재시작 후 데이터 유지 확인
 
-### ✅ Git
+✅ Git
 - [x] git init
 - [x] git add
 - [x] git commit
 - [x] git push
 
-### ✅ GitHub
+✅ GitHub
 - [x] Repository 생성
 - [x] README.md 작성
 - [x] 원격 저장소 연결 및 push 완료
----
 
-## 실습 목록
+<br><br>
 
-## STEP 1. 터미널 & Docker 설치
+------
+**🖥️ 실습 목록**
+# STEP 1. 터미널 & Docker 설치
  
-✅ 1단계 - WSL2 설치 : PowerShell(관리자 권한)에서 WSL2 설치 명령 실행 후 컴퓨터 재부팅
-✅ 2단계 - Ubuntu 설치
-✅ 3단계 - 환경 설정
-✅ 4단계 - 패키지 업데이트 : sudo apt update 실행 -> 32.4MB 다운로드 완료 -> 133개 업그레이드 가능 패키지 확인
+    ✅ 1단계 - WSL2 설치 : PowerShell(관리자 권한)에서 WSL2 설치 명령 실행 후 컴퓨터 재부팅  
+    ✅ 2단계 - Ubuntu 설치  
+    ✅ 3단계 - 환경 설정  
+    ✅ 4단계 - 패키지 업데이트 : sudo apt update 실행 -> 32.4MB 다운로드 완료 -> 133개 업그레이드 가능 패키지 확인  
 
- 1. WSL2 및 Ubuntu 설치 : 리눅스 CLI (터미널)  
+
+<br>
+
+ ## 1. WSL2 및 Ubuntu 설치 : 리눅스 CLI (터미널)  
    - PowerShell을 이용하여 WSL 및 Ubuntu 설치한다.
 <img width="1255" height="621" alt="image" src="https://github.com/user-attachments/assets/8c2ff85e-46c6-4250-a18c-f1990f332fd1" />
 <img width="1099" height="246" alt="image" src="https://github.com/user-attachments/assets/cfec0886-36f6-4f06-80de-da8394d145f8" />
