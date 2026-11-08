@@ -44,8 +44,10 @@ _[올인원 - 입학연수 E1-1]_
 | 터미널 | Windows Terminal |
 | 컨테이너 | Docker |
 | Docker 버전 | Docker version 29.9.2 |
-| Git 버전 | 확인 후 작성 |
+| Git 버전 | git version 2.53.0 |
 <img width="553" height="32" alt="image" src="https://github.com/user-attachments/assets/5f0d6dfd-eee8-4d30-a136-53902b09d083" />
+<img width="408" height="35" alt="image" src="https://github.com/user-attachments/assets/707eb2bc-563a-4b26-a180-e7670e8e6e63" />
+
 
 <br><br>    
 
@@ -147,7 +149,7 @@ _[올인원 - 입학연수 E1-1]_
     2️⃣ PowerSell : 윈도우 명령어 창(CLI)  
     3️⃣ WSL(Windows Subsystem for Linux) : Windows 안에서 Linux를 쓸 수 있게 해주는 도구  
     4️⃣ Ubuntu : 리눅스 운영체제 종류  
-    5️⃣Docker : 프로그램을 어디서든 똑같이 실행할 수 있게 해주는 도구 
+    5️⃣ Docker : 프로그램을 어디서든 똑같이 실행할 수 있게 해주는 도구 
 
 <br><br>
 
@@ -177,8 +179,10 @@ _[올인원 - 입학연수 E1-1]_
 <br><br>
 
 # STEP 5. 바인드 마운트 / 볼륨
-* 코드 변경 즉시 반영
-* 데이터 영속성 확인
+* 바인드 마운트와 볼륨은 둘 다 컨테이너 외부에 데이터를 저장하지만 저장 공간을 누가 관리하는지가 다릅니다.
+  여기서 중요한 건 마운트와 볼륨을 서로 반대되는 개념으로 외우면 안 된다는 것입니다.
+<img width="582" height="387" alt="image" src="https://github.com/user-attachments/assets/5ba6edfc-4aed-49e4-8367-6b343cbcf6f9" />
+<img width="582" height="194" alt="image" src="https://github.com/user-attachments/assets/6b26e1b1-b8e3-4506-8739-383157ba20a6" />
 
 <img width="1568" height="655" alt="image" src="https://github.com/user-attachments/assets/b6617c48-d57a-4095-bcaf-79d4d488ee29" />
 <img width="1568" height="1161" alt="image" src="https://github.com/user-attachments/assets/8de1591e-717e-4cc4-8462-68015baa6a23" />
@@ -189,6 +193,8 @@ _[올인원 - 입학연수 E1-1]_
 
 # STEP 6. Git / GitHub 연동
 * 버전 관리 & 팀 협업
+<img width="533" height="466" alt="image" src="https://github.com/user-attachments/assets/b4459151-5bb9-475d-9635-ac924bb7cc60" />
+
 ### (1) Git 초기회 & 파일 등록
 <img width="658" height="185" alt="image" src="https://github.com/user-attachments/assets/d207f9fa-3ce1-4b5c-86d6-a2d984761b86" />
 <img width="767" height="100" alt="image" src="https://github.com/user-attachments/assets/1b0c4792-c58a-4180-831b-3e34e5b32b32" />
