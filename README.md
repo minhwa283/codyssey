@@ -189,10 +189,16 @@ _[올인원 - 입학연수 E1-1]_
 
 # STEP 6. Git / GitHub 연동
 * 버전 관리 & 팀 협업
-### Git 초기회 & 파일 등록
+### (1) Git 초기회 & 파일 등록
 <img width="658" height="185" alt="image" src="https://github.com/user-attachments/assets/d207f9fa-3ce1-4b5c-86d6-a2d984761b86" />
 <img width="767" height="100" alt="image" src="https://github.com/user-attachments/assets/1b0c4792-c58a-4180-831b-3e34e5b32b32" />
 
+### (2) GitHub 로그인 및 Personal Access Token(PAT) 입력
+<img width="514" height="152" alt="image" src="https://github.com/user-attachments/assets/deec2166-0be4-448a-af47-a9ae9ff55c9b" />
+
+### (3)GitHub push 완료 확인
+<img width="688" height="301" alt="image" src="https://github.com/user-attachments/assets/d69a66ff-4983-4571-be7f-3003235f6232" />
+<img width="728" height="287" alt="image" src="https://github.com/user-attachments/assets/025bb5e2-9dc1-41fc-a0bc-118fb89a5a1d" />
 
 
 
