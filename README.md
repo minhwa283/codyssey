@@ -275,73 +275,9 @@ _[올인원 - 입학연수 E1-1]_
 <br>
 <img width="1455" height="573" alt="image" src="https://github.com/user-attachments/assets/431c9a04-5911-4644-ba8a-e52e075210c8" />
 <br><br>
+    
+        
 
-         
-
-
-         
-
--------
-### 1. 터미널(WSL2) + Ubuntu 설치
-- Windows에 WSL2 설치
-- Ubuntu 배포판 설치 및 초기 설정
-
-### 2. Docker 설치 및 검증
-- Docker 엔진 설치
-- 설치 확인 명령어 실행
-
-### 3. 터미널 기본 조작
-- pwd, ls, mkdir, cd 명령어 실습
-
-### 4. 파일 권한 실습
-- 파일 권한 변경 (644, 755)
-- chmod 명령어 사용
-
-### 5. Dockerfile 작성 및 빌드
-- Dockerfile 작성
-- 이미지 빌드 성공
-
-### 6. 컨테이너 실행 및 포트 매핑
-- 포트 매핑 (8080:80)
-- 브라우저 접속 확인 (localhost:8080)
-
-### 7. 바인드 마운트 실습
-- 파일 실시간 반영 확인
-
-### 8. 볼륨 마운트 실습
-- 컨테이너 재시작 없이 변경 반영 확인
-
----
-
-## 주요 명령어 정리
-
-### Docker 명령어
-\```bash
-# 이미지 빌드
-docker build -t 이미지명 .
-
-# 컨테이너 실행 (포트 매핑)
-docker run -d -p 8080:80 이미지명
-
-# 바인드 마운트 실행
-docker run -d -p 8080:80 -v $(pwd):/usr/share/nginx/html 이미지명
-
-# 실행 중인 컨테이너 확인
-docker ps
-
-# 컨테이너 중지
-docker stop 컨테이너ID
-\```
-
-### 터미널 명령어
-\```bash
-pwd       # 현재 위치 확인
-ls        # 파일 목록 확인
-mkdir     # 폴더 생성
-cd        # 폴더 이동
-chmod 644 파일명   # 파일 권한 변경
-chmod 755 파일명   # 실행 권한 부여
-\```
 
 ---
 
