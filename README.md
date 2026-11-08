@@ -207,6 +207,13 @@ _[올인원 - 입학연수 E1-1]_
 <img width="728" height="287" alt="image" src="https://github.com/user-attachments/assets/025bb5e2-9dc1-41fc-a0bc-118fb89a5a1d" />
 
 <br><br>  
+
+# STEP 7. VSCode GitHub 연결
+<img width="952" height="393" alt="image" src="https://github.com/user-attachments/assets/30c1e6e7-4ffc-47c6-bed0-736511889a75" />
+<img width="956" height="623" alt="image" src="https://github.com/user-attachments/assets/304f3f26-64d8-4f8b-9efc-3fc4741474db" />
+
+
+
 ------
 # ※ 트러블 슈팅
   ### 1. Docker 권한 문제  
