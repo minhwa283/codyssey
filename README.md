@@ -206,7 +206,38 @@ _[올인원 - 입학연수 E1-1]_
 <img width="688" height="301" alt="image" src="https://github.com/user-attachments/assets/d69a66ff-4983-4571-be7f-3003235f6232" />
 <img width="728" height="287" alt="image" src="https://github.com/user-attachments/assets/025bb5e2-9dc1-41fc-a0bc-118fb89a5a1d" />
 
+<br><br>  
+------
+# 트러블 슈팅
+  ### 1. Docker 권한 문제  
+문제:    docker 명령어 실행 시  
+         "permission denied" 오류 발생  
+원인 가설: 현재 사용자가 docker 그룹에 미포함  
+확인:    sudo docker ps → 정상 작동 확인  
+해결:    sudo usermod -aG docker $USER  
+         newgrp docker (재로그인 없이 적용)  
+<img width="1494" height="87" alt="image" src="https://github.com/user-attachments/assets/1b5d628a-f784-42ac-93ae-e8a61d6392d7" />
+<img width="339" height="584" alt="image" src="https://github.com/user-attachments/assets/3d2fabfb-e23e-4fc3-99fa-605f3011cf06" />
+<img width="1568" height="1089" alt="image" src="https://github.com/user-attachments/assets/2d923ecd-d63b-4c1e-a7cf-2cc5ac3f3099" />
 
+  ### 2. 서브모듈 문제  
+문제:    docker-mission 폴더 클릭 시 404 오류 발생  
+원인 가설: docker-mission 안에 .git 폴더가 남아있어서  
+          GitHub가 폴더를 서브모듈로 인식  
+확인:    폴더 아이콘에 화살표(→) 표시 확인  
+해결:    git rm --cached docker-mission  
+         git add docker-mission/  
+         git commit & push  
+
+<img width="1568" height="493" alt="image" src="https://github.com/user-attachments/assets/82e0da5e-d1d7-4bdc-ac48-947f7dea5f98" />
+<img width="323" height="493" alt="image" src="https://github.com/user-attachments/assets/aa9943dd-7eed-4fe8-be48-791928b488b9" />
+<img width="1455" height="573" alt="image" src="https://github.com/user-attachments/assets/431c9a04-5911-4644-ba8a-e52e075210c8" />
+
+
+         
+
+
+         
 
 -------
 ### 1. 터미널(WSL2) + Ubuntu 설치
