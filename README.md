@@ -208,14 +208,13 @@ _[올인원 - 입학연수 E1-1]_
 
 <br><br>  
 ------
-# 트러블 슈팅
+# ※ 트러블 슈팅
   ### 1. Docker 권한 문제  
-문제:    docker 명령어 실행 시  
-         "permission denied" 오류 발생  
-원인 가설: 현재 사용자가 docker 그룹에 미포함  
-확인:    sudo docker ps → 정상 작동 확인  
-해결:    sudo usermod -aG docker $USER  
-         newgrp docker (재로그인 없이 적용)  
+* 문제:    docker 명령어 실행 시 "permission denied" 오류 발생  
+* 원인 가설: 현재 사용자가 docker 그룹에 미포함  
+* 확인:    sudo docker ps → 정상 작동 확인  
+* 해결:    sudo usermod -aG docker $USER  
+           newgrp docker (재로그인 없이 적용)  
 <img width="1494" height="87" alt="image" src="https://github.com/user-attachments/assets/1b5d628a-f784-42ac-93ae-e8a61d6392d7" />
 <img width="339" height="584" alt="image" src="https://github.com/user-attachments/assets/3d2fabfb-e23e-4fc3-99fa-605f3011cf06" />
 <img width="1568" height="1089" alt="image" src="https://github.com/user-attachments/assets/2d923ecd-d63b-4c1e-a7cf-2cc5ac3f3099" />
