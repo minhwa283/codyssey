@@ -20,7 +20,7 @@ _[올인원 - 입학연수 E1-1]_
     
 <br>  
 
-# 📌 과제 목표
+# 📌 과제 목표 (6)
  ### 👉 (1) 절대 경로와 상대 경로의 차이를 예시를 들어 설명할 수 있다.
 <img width="564" height="370" alt="image" src="https://github.com/user-attachments/assets/1b45bb10-c761-4423-8874-696d6d0e7cc6" />
 
@@ -31,6 +31,8 @@ _[올인원 - 입학연수 E1-1]_
 
 <br><br> 
 ### 👉 (3) 기존 Dockerfile을 기반으로 “커스텀 이미지”를 만들 수 있다.
+*도커는 컨테이너를 생성하고 실행하는 플랫폼으로 도커파일에 이미지 생성 명령어를 작성하고, 이를 빌드하여 이미지를 만듭니다.  
+그리고 생성된 이미지를 기반으로 컨테이너를 생성하고 실행합니다.
 <img width="645" height="340" alt="image" src="https://github.com/user-attachments/assets/e9309e77-6afc-48a1-813b-bc3f869840d4" />
 <img width="350" height="230" alt="image" src="https://github.com/user-attachments/assets/e1d318cd-889b-4537-9dd7-ecd260c98d54" />
 
@@ -128,6 +130,17 @@ git --version
 
 ------
 **🖥️ 실습 목록**
+----
+* STEP1 터미널 & Docker 설치
+* STEP2 작업 디렉토리 & 권한 정리
+* STEP3 Dockerfile로 웹서버 만들기
+* STEP4 포트 매핑으로 접속 확인
+* STEP5 바인드 마운트 / 볼륨
+* STEP6 Git / GitHub 연동
+* STEP7 VSCode GitHub 연결
+----
+<br><br>
+
 # STEP 1. 터미널 & Docker 설치
  
     ✅ 1단계 - WSL2 설치 : PowerShell(관리자 권한)에서 WSL2 설치 명령 실행 후 컴퓨터 재부팅  
@@ -229,18 +242,43 @@ docker --version
 ### 📝 Docker 운영 검증 로그
 
 ```bash
-# (1) Docker 실행 환경 확인
+# (1) Docker 설치 확인
+# 설치된 Docker 버전 확인
+docker --version
+# 실행 결과: Docker version 29.9.2, build a82e528
+
+# (2) Docker 실행 환경 확인
 # Docker 클라이언트 및 플러그인 정보 확인
 docker info
 # 실행 결과: Docker Engine Community 버전 29.9.2
 # Buildx 버전 v0.38.1, Compose 버전 v5.7.0 확인
 
-# (2) Docker 이미지 목록 확인
-# 로컬에 저장된 Docker 이미지 목록 조회
+# (3) Docker 이미지 다운로드
+# Docker Hub에서 hello-world 이미지 다운로드
+docker pull hello-world
+# 예상 결과: hello-world:latest 이미지 다운로드
+
+# Docker Hub에서 nginx:alpine 이미지 다운로드
+docker pull nginx:alpine
+# 예상 결과: nginx:alpine 이미지 다운로드
+
+# (4) Docker 이미지 목록 확인
+# 로컬에 저장된 Docker 이미지 조회
 docker images
-# 실행 결과: docker-mission:latest 이미지 확인
-# hello-world:latest 이미지 확인
-# nginx:alpine 이미지 확인
+# 화면에서 확인된 이미지: docker-mission:latest
+# 화면에서 확인된 이미지: hello-world:latest
+# 화면에서 확인된 이미지: nginx:alpine
+
+# (5) Docker 컨테이너 실행
+# hello-world 이미지로 컨테이너 생성 및 실행
+docker run hello-world
+# 예상 결과: Hello from Docker! 메시지 출력
+
+# (6) Docker 컨테이너 목록 확인
+# 실행 중이거나 중지된 모든 컨테이너 조회
+docker ps -a
+# 예상 결과: hello-world 컨테이너 조회
+
 ```
 
 <img width="587" height="176" alt="image" src="https://github.com/user-attachments/assets/4c8590c7-8a32-47fd-88ea-b8149b1250ec" />
