@@ -160,6 +160,8 @@ _[올인원 - 입학연수 E1-1]_
 
 # STEP 3. Dockerfile로 웹서버 만들기
 <img width="1198" height="121" alt="image" src="https://github.com/user-attachments/assets/60aadf35-6fb9-47db-9795-8d4e31237960" />
+<img width="527" height="116" alt="image" src="https://github.com/user-attachments/assets/24add6b5-dcc2-4ea1-b796-41ba68ff3977" />
+
 <img width="1224" height="334" alt="image" src="https://github.com/user-attachments/assets/8844c599-40bf-4f97-9310-fa224c12139e" />
 <img width="899" height="154" alt="image" src="https://github.com/user-attachments/assets/0d2a7d8d-b1b2-4d34-bc1c-5cffab1115fa" />
 <img width="1568" height="669" alt="image" src="https://github.com/user-attachments/assets/4ca7a86c-4c9c-4e15-8ac1-dd2f303c3ced" />
