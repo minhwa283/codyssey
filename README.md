@@ -214,24 +214,31 @@ _[올인원 - 입학연수 E1-1]_
 * 원인 가설: 현재 사용자가 docker 그룹에 미포함  
 * 확인:    sudo docker ps → 정상 작동 확인  
 * 해결:    sudo usermod -aG docker $USER  
-           newgrp docker (재로그인 없이 적용)  
+           newgrp docker (재로그인 없이 적용)
+<br><br>
+ 
 <img width="1494" height="87" alt="image" src="https://github.com/user-attachments/assets/1b5d628a-f784-42ac-93ae-e8a61d6392d7" />
+<br>
 <img width="339" height="584" alt="image" src="https://github.com/user-attachments/assets/3d2fabfb-e23e-4fc3-99fa-605f3011cf06" />
+<br>
 <img width="1568" height="1089" alt="image" src="https://github.com/user-attachments/assets/2d923ecd-d63b-4c1e-a7cf-2cc5ac3f3099" />
+<br><br>
 
   ### 2. 서브모듈 문제  
-문제:    docker-mission 폴더 클릭 시 404 오류 발생  
-원인 가설: docker-mission 안에 .git 폴더가 남아있어서  
-          GitHub가 폴더를 서브모듈로 인식  
-확인:    폴더 아이콘에 화살표(→) 표시 확인  
-해결:    git rm --cached docker-mission  
-         git add docker-mission/  
-         git commit & push  
+* 문제:    docker-mission 폴더 클릭 시 404 오류 발생  
+* 원인 가설: docker-mission 안에 .git 폴더가 남아있어서 GitHub가 폴더를 서브모듈로 인식  
+* 확인:    폴더 아이콘에 화살표(→) 표시 확인  
+* 해결:    git rm --cached docker-mission  
+           git add docker-mission/  
+           git commit & push  
+<br><br>
 
 <img width="1568" height="493" alt="image" src="https://github.com/user-attachments/assets/82e0da5e-d1d7-4bdc-ac48-947f7dea5f98" />
+<br>
 <img width="323" height="493" alt="image" src="https://github.com/user-attachments/assets/aa9943dd-7eed-4fe8-be48-791928b488b9" />
+<br>
 <img width="1455" height="573" alt="image" src="https://github.com/user-attachments/assets/431c9a04-5911-4644-ba8a-e52e075210c8" />
-
+<br><br>
 
          
 
