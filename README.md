@@ -30,6 +30,33 @@ _[올인원 - 입학연수 E1-1]_
 - ✅ Docker를 이용한 재현 가능한 실행 환경 구축
 - ✅ Git/GitHub를 통한 버전 관리 및 협업 기반 마련
 - ✅ "내 컴퓨터에서만 돌아가는 문제" 해결  
+    
+<br>  
+
+# 📌 과제 목표
+ ### 👉 (1) 절대 경로와 상대 경로의 차이를 예시를 들어 설명할 수 있다.
+<img width="564" height="370" alt="image" src="https://github.com/user-attachments/assets/1b45bb10-c761-4423-8874-696d6d0e7cc6" />
+
+<br><br>   
+### 👉 (2) 파일 권한의 의미(r/w/x)와 755, 644 같은 표기가 어떤 규칙으로 해석되는지 설명할 수 있다.
+<img width="645" height="320" alt="image" src="https://github.com/user-attachments/assets/90a74b49-2826-42e2-a186-0fb8e8b7aa74" />  
+<img width="284" height="128" alt="image" src="https://github.com/user-attachments/assets/7978676d-5b4a-4cc9-9dec-c47e1159a7be" />
+
+<br><br> 
+### 👉 (3) 기존 Dockerfile을 기반으로 “커스텀 이미지”를 만들 수 있다.
+<img width="645" height="340" alt="image" src="https://github.com/user-attachments/assets/e9309e77-6afc-48a1-813b-bc3f869840d4" />
+
+<br><br> 
+### 👉 (4) 포트 매핑이 필요한 이유를 설명할 수 있다.
+<img width="645" height="340" alt="image" src="https://github.com/user-attachments/assets/ef407415-3cec-4774-8677-94f2e9ea0c76" />
+
+<br><br> 
+### 👉 (5) Docker 볼륨(영속 데이터)을 설명할 수 있다.
+<img width="645" height="340" alt="image" src="https://github.com/user-attachments/assets/c0bc4247-2e5f-4c0f-beb0-fd5ddbb55ee0" />
+
+<br><br> 
+### 👉 (6) Git과 GitHub의 역할 차이(로컬 버전관리 vs 원격 협업 플랫폼)를 설명할 수 있다.
+<img width="645" height="340" alt="image" src="https://github.com/user-attachments/assets/e81f11c3-1d3a-4639-b279-5c508d0e0231" />
 
 <br><br><br>     
 
