@@ -351,6 +351,18 @@ docker build -t docker-mission .
 <br><br>
 
 # STEP 4. 포트 매핑으로 접속 확인
+
+```bash
+# (1) Docker 컨테이너 포트 매핑 확인
+docker port my-nginx
+# 실행 결과: 컨테이너 80번 포트가 호스트 8080번 포트에 연결됨
+# 80/tcp -> 0.0.0.0:8080
+# 80/tcp -> [::]:8080
+
+# (2) 작업 디렉터리 및 파일 확인
+cd ~/projects/docker-mission && ls
+# 실행 결과: Dockerfile, index.html, test.sh 파일 확인
+```
 * 브라우저 직접 접속
 <img width="1568" height="139" alt="image" src="https://github.com/user-attachments/assets/b3ca8ea2-a2c4-4655-a17a-175d2e930654" />
 <img width="1470" height="88" alt="image" src="https://github.com/user-attachments/assets/49b2c6a8-a99d-415d-9178-405a11a3a0db" />
@@ -360,6 +372,48 @@ docker build -t docker-mission .
 # STEP 5. 바인드 마운트 / 볼륨
 * 바인드 마운트와 볼륨은 둘 다 컨테이너 외부에 데이터를 저장하지만 저장 공간을 누가 관리하는지가 다릅니다.
   여기서 중요한 건 마운트와 볼륨을 서로 반대되는 개념으로 외우면 안 된다는 것입니다.
+
+```bash
+# (1) 기존 Nginx 컨테이너 중지
+docker stop my-nginx
+# 실행 결과: my-nginx 컨테이너 중지
+
+# (2) 바인드 마운트를 적용한 새 컨테이너 생성 및 실행
+# 호스트의 docker-mission 폴더를 컨테이너의 웹서버 폴더에 연결
+# 호스트 8080번 포트를 컨테이너 80번 포트에 연결
+docker run -d \
+  --name my-nginx-vol \
+  -p 8080:80 \
+  -v ~/projects/docker-mission:/usr/share/nginx/html \
+  nginx:alpine
+# 실행 결과: nginx:alpine 이미지 다운로드 및 컨테이너 생성
+
+# (3) 실행 중인 컨테이너 확인
+docker ps
+# 실행 결과: my-nginx-vol 컨테이너 실행 중(Up)
+# 포트 매핑: 8080 -> 80
+
+# (4) HTML 파일 내용 변경
+# 호스트의 index.html 파일을 수정
+echo "<h1>Hello, Volume!</h1>" > ~/projects/docker-mission/index.html
+# 실행 결과: index.html 파일 내용 변경
+
+# (5) 브라우저에서 변경 내용 확인
+# 접속 주소: http://localhost:8080
+# 실행 결과: Hello, Volume! 화면 출력
+# 바인드 마운트로 연결된 파일의 변경 내용이 웹페이지에 반영됨
+
+# (6) 컨테이너 중지
+docker stop my-nginx-vol
+# 실행 결과: my-nginx-vol 컨테이너 중지
+
+# (7) 전체 컨테이너 상태 확인
+docker ps -a
+# 실행 결과: my-nginx-vol -> Exited (0)
+# 실행 결과: my-nginx -> Exited (0)
+# 실행 결과: hello-world 컨테이너 -> Exited (0)
+```
+  
 <img width="582" height="387" alt="image" src="https://github.com/user-attachments/assets/5ba6edfc-4aed-49e4-8367-6b343cbcf6f9" />
 <img width="582" height="194" alt="image" src="https://github.com/user-attachments/assets/6b26e1b1-b8e3-4506-8739-383157ba20a6" />
 
@@ -375,7 +429,45 @@ docker build -t docker-mission .
 * 버전 관리 & 팀 협업
 <img width="533" height="466" alt="image" src="https://github.com/user-attachments/assets/b4459151-5bb9-475d-9635-ac924bb7cc60" />
 
-### (1) Git 초기회 & 파일 등록
+### (1) Git 초기화 & 파일 등록
+```bash
+# Git 프로젝트 디렉터리로 이동
+cd ~/my-docker-project
+
+# Git 저장소 초기화
+git init
+# 실행 결과: 기존 Git 저장소 재초기화
+
+# 현재 디렉터리의 모든 파일을 스테이징 영역에 추가
+git add .
+
+# Git 파일 상태 확인
+git status
+# 실행 결과: master 브랜치, 아직 커밋 없음
+# Dockerfile, index.html 파일이 커밋 대기 상태로 등록됨
+
+# Git 사용자 이메일 설정 (실제 이메일 주소 입력)
+git config --global user.email "본인 이메일 주소"
+
+# Git 사용자 이름 설정
+git config --global user.name "minhwa"
+
+# 변경 사항을 로컬 저장소에 커밋
+git commit -m "first commit: Docker 웹서버 실습 완료"
+# 실행 결과: 첫 번째 커밋 생성 (e9a03af)
+# 2 files changed, 11 insertions(+)
+# Dockerfile, index.html 파일 등록 완료
+
+# GitHub 원격 저장소의 main 브랜치로 업로드
+git push origin main
+
+# 실행 과정: GitHub 사용자 이름 및 PAT 인증
+# PAT는 비밀번호 입력란에 입력 (README에 토큰 기록 금지)
+
+# 실행 결과: GitHub 원격 저장소로 업로드 완료
+# To https://github.com/minhwa283/codyssey.git
+# main -> main
+```
 <img width="658" height="185" alt="image" src="https://github.com/user-attachments/assets/d207f9fa-3ce1-4b5c-86d6-a2d984761b86" />
 <img width="767" height="100" alt="image" src="https://github.com/user-attachments/assets/1b0c4792-c58a-4180-831b-3e34e5b32b32" />
 
@@ -403,6 +495,31 @@ docker build -t docker-mission .
 * 해결:    sudo usermod -aG docker $USER  
            newgrp docker (재로그인 없이 적용)
 <br><br>
+
+```bash
+# (1) Docker 이미지 빌드 시도
+docker build -t docker-mission .
+# 실행 결과: permission denied 오류 발생
+# 원인: Docker 소켓에 접근할 권한이 부족함
+
+# (2) Docker 그룹 권한 설정
+# 현재 사용자를 docker 그룹에 추가
+sudo usermod -aG docker $USER
+# 실행 결과: docker 그룹 추가 명령 실행
+
+# (3) 권한 적용을 위한 패키지 설치
+# newgrp 명령어 사용을 위한 util-linux-extra 설치
+sudo apt install util-linux-extra
+# 실행 결과: 패키지 설치 완료
+
+# (4) Docker 그룹 권한 적용
+newgrp docker
+# 실행 결과: 오류 없이 새 셸 실행
+
+# (5) Docker 이미지 빌드 재시도
+docker build -t docker-mission .
+# 이전 실습 화면에서 이미지 빌드 완료 확인
+```
  
 <img width="1494" height="87" alt="image" src="https://github.com/user-attachments/assets/1b5d628a-f784-42ac-93ae-e8a61d6392d7" />
 <br>
@@ -419,6 +536,30 @@ docker build -t docker-mission .
            git add docker-mission/  
            git commit & push  
 <br><br>
+
+```bash
+# (1) GitHub 폴더 접근 오류 발생
+# 실행 결과: 404 - page not found
+# 원인: docker-mission 폴더 안에 .git 폴더가 있어
+# GitHub에서 일반 폴더가 아닌 서브모듈로 인식함
+
+# (2) 기존 서브모듈 등록 제거
+cd ~/codyssey
+git rm --cached docker-mission
+# 실행 목적: Git 인덱스에서 서브모듈 등록 제거
+
+# (3) 일반 폴더로 다시 등록
+git add docker-mission/
+# 실행 목적: docker-mission 폴더를 Git에 다시 추가
+
+# (4) 변경 사항 커밋 및 GitHub 업로드
+git commit -m "fix: docker-mission 서브모듈 해제"
+git push origin main
+
+# (5) 실행 결과 확인
+# GitHub에서 docker-mission 폴더 정상 접근
+# Dockerfile, index.html 파일 표시 확인
+```
 
 <img width="1568" height="493" alt="image" src="https://github.com/user-attachments/assets/82e0da5e-d1d7-4bdc-ac48-947f7dea5f98" />
 <br>
