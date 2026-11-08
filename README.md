@@ -189,6 +189,10 @@ _[올인원 - 입학연수 E1-1]_
 
 # STEP 6. Git / GitHub 연동
 * 버전 관리 & 팀 협업
+### Git 초기회 & 파일 등록
+<img width="658" height="185" alt="image" src="https://github.com/user-attachments/assets/d207f9fa-3ce1-4b5c-86d6-a2d984761b86" />
+<img width="767" height="100" alt="image" src="https://github.com/user-attachments/assets/1b0c4792-c58a-4180-831b-3e34e5b32b32" />
+
 
 
 
