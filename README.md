@@ -45,6 +45,8 @@ _[올인원 - 입학연수 E1-1]_
 <br><br> 
 ### 👉 (3) 기존 Dockerfile을 기반으로 “커스텀 이미지”를 만들 수 있다.
 <img width="645" height="340" alt="image" src="https://github.com/user-attachments/assets/e9309e77-6afc-48a1-813b-bc3f869840d4" />
+<img width="350" height="230" alt="image" src="https://github.com/user-attachments/assets/e1d318cd-889b-4537-9dd7-ecd260c98d54" />
+
 
 <br><br> 
 ### 👉 (4) 포트 매핑이 필요한 이유를 설명할 수 있다.
