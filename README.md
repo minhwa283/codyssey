@@ -1,5 +1,3 @@
-컨테이너 종료/유지(attach/exec 등)의 차이
-
 _[올인원 - 입학연수 E1-1]_
 <img width="846" height="260" alt="image" src="https://github.com/user-attachments/assets/7da59523-9c41-43b1-9eef-f0a92ad35dc8" />
 
