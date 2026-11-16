@@ -283,22 +283,23 @@ docker ps -a
 # nginx 컨테이너를 백그라운드로 실행
 docker run -d --name my-nginx nginx:alpine
 
-# [exec 실습] 새 프로세스로 접속 → exit 해도 컨테이너 유지
+# [attach 실습] 메인 프로세스에 직접 연결 : attach는 새 프로세스를 만들지 않음. 그리고 attach에서 메인 프로세스를 종료하면 컨테이너도 종료될 수 있다.
+docker attach my-nginx
+
+# 실행 중인 컨테이너 확인 (컨테이너 종료)
+docker ps
+
+# [exec 실습] 새 프로세스로 접속 → exit 해도 컨테이너 유지 :exec 실행 중인 컨테이너 안에서 새로은 프로세스 실행하여 접속 
 docker exec -it my-nginx /bin/sh
 exit
 # 실행 중인 컨테이너 확인 (살아있음)
 docker ps  
 
-# [attach 실습] 메인 프로세스에 직접 연결
-docker attach my-nginx
 
-# 실행 중인 컨테이너 확인 (컨테이너 종료)
-docker ps  
 ```
 
 <img width="587" height="176" alt="image" src="https://github.com/user-attachments/assets/4c8590c7-8a32-47fd-88ea-b8149b1250ec" />
 <img width="851" height="90" alt="image" src="https://github.com/user-attachments/assets/72439e50-e272-4c3f-b1b8-b5f465fea57b" />      
-<img width="835" height="359" alt="image" src="https://github.com/user-attachments/assets/19b4c755-8413-464e-b84a-ee2bb7422ec5" />
 
 <br>
 
