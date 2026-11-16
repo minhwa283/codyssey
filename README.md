@@ -279,10 +279,26 @@ docker run hello-world
 docker ps -a
 # 예상 결과: hello-world 컨테이너 조회
 
+# (7) attach/exec 실습
+# nginx 컨테이너를 백그라운드로 실행
+docker run -d --name my-nginx nginx:alpine
+
+# [exec 실습] 새 프로세스로 접속 → exit 해도 컨테이너 유지
+docker exec -it my-nginx /bin/sh
+exit
+# 실행 중인 컨테이너 확인 (살아있음)
+docker ps  
+
+# [attach 실습] 메인 프로세스에 직접 연결
+docker attach my-nginx
+
+# 실행 중인 컨테이너 확인 (컨테이너 종료)
+docker ps  
 ```
 
 <img width="587" height="176" alt="image" src="https://github.com/user-attachments/assets/4c8590c7-8a32-47fd-88ea-b8149b1250ec" />
 <img width="851" height="90" alt="image" src="https://github.com/user-attachments/assets/72439e50-e272-4c3f-b1b8-b5f465fea57b" />      
+<img width="835" height="359" alt="image" src="https://github.com/user-attachments/assets/19b4c755-8413-464e-b84a-ee2bb7422ec5" />
 
 <br>
 
